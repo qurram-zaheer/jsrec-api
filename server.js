@@ -12,10 +12,8 @@ const entries = require('./controllers/entries')
 const db = knex({
     client: 'pg',
     connection: {
-      host : '127.0.0.1',
-      user : 'qurramzaheer',
-      password : '',
-      database : 'jsrec'
+      connectionString : process.env.DATABASE_URL,
+      ssl: true,
     }
   });
 
